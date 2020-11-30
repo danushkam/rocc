@@ -1,0 +1,162 @@
+====== inet-3.x ======
+
+2018-03-21  ------ inet-3.6.4 released ------
+
+2017-12-22  ------ inet-3.6.3 released ------
+
+2017-10-02  Levente Mészáros
+
+	Added statisticUnit parameter for the case when @statistic is on a submodule.
+	With the current omnetpp API there's no way to get the properties object.
+
+2017-10-02  ------ inet-3.6.2 released ------
+
+2017-10-02  Andras Varga
+
+	visualization: rename "displacement" parameters to "placement"
+
+2017-09-29  Levente Mészáros
+
+	Visualizer: Added netmask length to default format string of interface
+	visualization.
+
+2017-07-12  Rudolf Hornig
+
+	build: various fixes to eliminate warnings on clang 4 and gcc 7.x
+
+2017-07-06  ------ inet-3.6.1 released ------
+
+2017-06-09  ------ inet-3.6.0 released ------
+
+2017-06-08  Levente Mészáros
+
+	Added radio mode, reception state and transmission state visualization.
+
+2017-06-08  Zoltan Bojthe
+
+	Fixed warning: extra tokens at end of #endif directive [-Wextra-tokens]
+	Fixed feature related errors bugfix: some "signal == " was missed
+
+2017-06-08  Levente Mészáros
+
+	Added new energy storage visualizers.
+	Cleaned up link visualizer and path visualizer filtering.
+
+2017-06-06  Levente Mészáros
+
+	Added tags parameter to all visualizers.
+	Fixed bug related to using %u in statistic visualizer.
+	Added support for drawing one continuous box as opposed to one discrete
+	box per element.
+	Added displayRoutesIndividually and displayLabels flags.
+	Added nextHopModuleId to the map key of route visualizations.
+
+2017-06-01  Levente Mészáros
+
+	Added an optional but always active animationSpeed parameter.
+	Added displacementPriority parameters, renamed displacement parameter to displacementHint.
+	Changed default lineShift and labelFont parameters for better positioning at 1.0 zoom.
+	Fixed filter when there's no interface table.
+
+2017-05-30  Levente Mészáros
+
+	Added lineSmooth parameter.
+
+2017-05-30  Levente Mészáros
+
+	Fixed path building bug leading to NaN coordinates.
+
+2017-05-29  Levente Mészáros
+
+	Added format directrive for automatic IPv4/IPv6 address.
+	Added generic network address format directive.
+	Added check if loading the image is successful or not.
+	Added annotationSpacing parameter.
+	Added more parameters to queue visualizers.
+	Added displacement parameters to all visualizers.
+	Separated transmission and reception figures.
+	Changed default interface filter.
+
+2017-05-25  Levente Mészáros
+
+	Added queue visualizer modules.
+	Fixed displaying multiple routes between the same nodes.
+	Fixed moduleFilter in MobilityCanvasVisualizer.
+
+2017-05-24  Levente Mészáros
+
+	Switched to encapsulation tree id for identifiying packets.
+	Added line labels to path visualizers and link visualizers.
+	Changed source filter to accept all sources by default.
+	Dropped unused minValue, maxValue parameters.
+	Fixed compiler error when compiling without OSG (case of WITH_OSG is undefined)
+
+2017-02-20  Levente Mészáros
+
+	Implemented missing interfaceFilter in LinkVisualizer.
+
+2017-02-20  Levente Mészáros
+
+	Implemented missing nodeFilter in PathVisualizer.
+
+2017-02-09  Levente Mészáros
+
+	Increased statistic text precision to avoid scientific notation below 9999.
+
+2017-02-09  Levente Mészáros
+
+	Changed PathVisualizer to use ColorSet.
+
+2017-02-09  Levente Mészáros
+
+	Cleaned up MobilityVisualizer lineStyle and lineWidth parameters.
+
+2017-02-09  Levente Mészáros
+
+	Changed MediumVisualizer signalColor to use ColorSet.
+
+2017-02-08  Levente Mészáros
+
+	Changed StatisticVisualizer to use the new StringFormat.
+
+2017-02-07  Levente Mészáros
+
+	Added signalPropagationAdditionalTime parameter to MediumVisualizerBase.
+
+2017-01-02  Levente Mészáros
+
+	Added base classes for new visualizers:
+	Added interfaces for new visualizers: IIeee80211Visualizer,
+	IInterfaceTableVisualizer, IRoutingTableVisualizer, IInfoVisualizer
+	ITransportConnectionVisualizer, ILinkBreakVisualizer, IPacketDropVisualizer.
+
+2017-02-20  ------ inet-3.5.0 released ------
+
+2016-10-20  Rudolf Hornig
+
+	Refactoring: removed compatibility macros required for OMNeT++ 4.x builds
+	+ warning fixes
+
+2016-06-15  ------ inet-3.4.0 released ------
+
+2016-05-31  Levente Meszaros
+
+	Added separate visualizer modules developed over the last year.
+	Visualizer modules require at least OMNeT++ version 5.0, because
+	of the use of new graphics APIs.
+
+	There are separate visualizers for scene, network node, physical environment,
+	mobility, radio medium, connectivity, links, routes, obstacle loss, and
+	statistic. Added 3 visualizer modules for each model, one for cCanvas,
+	another one for OSG, and a combined variant. Also added integrated
+	visualizers that combine all known visualizers into a single module.
+	Visualization code can be turned off/on as a whole, as it is a separate
+	Project Feature (see .oppfeatures)
+
+	Added implementation of the following classes:
+
+	LinkVisualizerBase, MediumVisualizerBase, MobilityVisualizerBase,
+	NetworkNodeVisualizerBase, NetworkConnectionVisualizerBase,
+	PhysicalEnvironmentVisualizerBase, RouteVisualizerBase,
+	SceneOsgVisualizerBase, SceneVisualizerBase, StatisticVisualizerBase,
+	TracingObstacleLossVisualizerBase, VisualizerBase

@@ -1,0 +1,9 @@
+.qtenvrc
+.tkenvrc
+.tkenvlog
+.cmdenv-log
+visualizer/earth/cache
+**/data/resources/*
+**/results/*
+**/frames/*
+_site

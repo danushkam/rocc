@@ -1,0 +1,31 @@
+Coexistence
+
+1. Independent frequency bands
+
+Different kind of technologies can coexist
+
+- 2 wifi on non-overlapping channels
+- wifi + 802.15.4 on non-overlapping channels
+
+use scalar radio -> easier to use two radio mediums because of optimization
+
+2. Exacly overlapping frequency bands
+
+The frequency bands overlap in frequency and bandwidth
+
+wifi + 802.15.4
+-> this doesn't seem realistic because the two doesn't have the same fr and bw
+
+but this way this can use scalar radio
+
+3. Partially overlapping frequency bands
+
+or completely overlapping
+
+this is more realistic...use dimensional
+
+they can completely overlap meaning one spectrum contains the other in the middle
+
+Idea: 1. independent fr band, 1 radio medium, scalar
+      2. independent fr band, 2 radio mediums, scalar -> should compare the preformance of the two
+                      and how it scales
