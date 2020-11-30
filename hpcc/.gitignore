@@ -1,0 +1,15 @@
+.computed/
+.cproject
+.oppbuildspec
+.project
+.qtenvrc
+.settings/
+*_m.cc
+*_m.h
+gen-2.anf
+language.settings.xml
+out/
+results/
+*.fst
+*.fct
+*.anf
