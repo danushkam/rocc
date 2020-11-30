@@ -1,0 +1,12 @@
+.cproject
+.oppbuildspec
+.project
+.settings
+Makefile
+libCOMMONS.dylib
+out/
+.DS_Store
+*_m.h
+*_m.cc
+debug
+*.dylib

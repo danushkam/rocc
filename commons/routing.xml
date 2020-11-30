@@ -1,0 +1,214 @@
+<config>
+   <interface hosts="DCFabric.spines[0]" names="eth0" address="10.0.1.1" netmask="255.255.255.252" metric="1"/>
+   <interface hosts="DCFabric.spines[0]" names="eth1" address="10.0.1.5" netmask="255.255.255.252" metric="1"/>
+   <interface hosts="DCFabric.spines[0]" names="eth2" address="10.0.1.9" netmask="255.255.255.252" metric="1"/>
+   <interface hosts="DCFabric.spines[0]" names="eth3" address="10.0.1.13" netmask="255.255.255.252" metric="1"/>
+   <interface hosts="DCFabric.spines[0]" names="eth4" address="10.0.1.17" netmask="255.255.255.252" metric="1"/>
+   <interface hosts="DCFabric.spines[0]" names="eth5" address="10.0.1.21" netmask="255.255.255.252" metric="1"/>
+   <interface hosts="DCFabric.spines[1]" names="eth0" address="10.0.1.25" netmask="255.255.255.252" metric="1"/>
+   <interface hosts="DCFabric.spines[1]" names="eth1" address="10.0.1.29" netmask="255.255.255.252" metric="1"/>
+   <interface hosts="DCFabric.spines[1]" names="eth2" address="10.0.1.33" netmask="255.255.255.252" metric="1"/>
+   <interface hosts="DCFabric.spines[1]" names="eth3" address="10.0.1.37" netmask="255.255.255.252" metric="1"/>
+   <interface hosts="DCFabric.spines[1]" names="eth4" address="10.0.1.41" netmask="255.255.255.252" metric="1"/>
+   <interface hosts="DCFabric.spines[1]" names="eth5" address="10.0.1.45" netmask="255.255.255.252" metric="1"/>
+   
+   <interface hosts="DCFabric.genTor" names="eth0" address="10.0.2.1" netmask="255.255.255.252" metric="1"/> <!-- 252 -> 1, 5, 9, ... -->
+   <interface hosts="DCFabric.genTor" names="eth1" address="10.0.2.5" netmask="255.255.255.252" metric="1"/>
+   <interface hosts="DCFabric.genTor" names="eth2" address="10.0.2.9" netmask="255.255.255.252" metric="1"/>
+   <interface hosts="DCFabric.genTor" names="eth3" address="10.0.2.13" netmask="255.255.255.252" metric="1"/>
+   <interface hosts="DCFabric.genTor" names="eth4" address="10.0.2.17" netmask="255.255.255.252" metric="1"/>
+   <interface hosts="DCFabric.genTor" names="eth5" address="10.0.2.21" netmask="255.255.255.252" metric="1"/>
+   <interface hosts="DCFabric.genTor" names="eth*" address="10.0.2.x" netmask="255.255.255.252" metric="1"/>
+   <interface hosts="DCFabric.generators[0..31]" names="eth0" address="10.0.2.x" netmask="255.255.255.252" metric="1"/>
+   
+   <interface hosts="DCFabric.sinkTor" names="eth0" address="10.0.3.1" netmask="255.255.255.252" metric="1"/>
+   <interface hosts="DCFabric.sinkTor" names="eth1" address="10.0.3.5" netmask="255.255.255.252" metric="1"/>
+   <interface hosts="DCFabric.sinkTor" names="eth2" address="10.0.3.9" netmask="255.255.255.252" metric="1"/>
+   <interface hosts="DCFabric.sinkTor" names="eth3" address="10.0.3.13" netmask="255.255.255.252" metric="1"/>
+   <interface hosts="DCFabric.sinkTor" names="eth4" address="10.0.3.17" netmask="255.255.255.252" metric="1"/>
+   <interface hosts="DCFabric.sinkTor" names="eth5" address="10.0.3.21" netmask="255.255.255.252" metric="1"/>
+   <interface hosts="DCFabric.sinkTor" names="eth*" address="10.0.3.x" netmask="255.255.255.252" metric="1"/>
+   <interface hosts="DCFabric.sinks[0..31]" names="eth0" address="10.0.3.x" netmask="255.255.255.252" metric="1"/>
+   
+   <route hosts="DCFabric.generators[0]" destination="10.0.2.0" netmask="255.255.255.252" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.generators[0]" destination="*" netmask="*" gateway="10.0.2.25" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.generators[1]" destination="10.0.2.0" netmask="255.255.255.252" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.generators[1]" destination="*" netmask="*" gateway="10.0.2.29" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.generators[2]" destination="10.0.2.0" netmask="255.255.255.252" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.generators[2]" destination="*" netmask="*" gateway="10.0.2.33" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.generators[3]" destination="10.0.2.0" netmask="255.255.255.252" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.generators[3]" destination="*" netmask="*" gateway="10.0.2.37" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.generators[4]" destination="10.0.2.0" netmask="255.255.255.252" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.generators[4]" destination="*" netmask="*" gateway="10.0.2.41" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.generators[5]" destination="10.0.2.0" netmask="255.255.255.252" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.generators[5]" destination="*" netmask="*" gateway="10.0.2.45" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.generators[6]" destination="10.0.2.0" netmask="255.255.255.252" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.generators[6]" destination="*" netmask="*" gateway="10.0.2.49" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.generators[7]" destination="10.0.2.0" netmask="255.255.255.252" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.generators[7]" destination="*" netmask="*" gateway="10.0.2.53" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.generators[8]" destination="10.0.2.0" netmask="255.255.255.252" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.generators[8]" destination="*" netmask="*" gateway="10.0.2.57" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.generators[9]" destination="10.0.2.0" netmask="255.255.255.252" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.generators[9]" destination="*" netmask="*" gateway="10.0.2.61" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.generators[10]" destination="10.0.2.0" netmask="255.255.255.252" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.generators[10]" destination="*" netmask="*" gateway="10.0.2.65" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.generators[11]" destination="10.0.2.0" netmask="255.255.255.252" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.generators[11]" destination="*" netmask="*" gateway="10.0.2.69" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.generators[12]" destination="10.0.2.0" netmask="255.255.255.252" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.generators[12]" destination="*" netmask="*" gateway="10.0.2.73" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.generators[13]" destination="10.0.2.0" netmask="255.255.255.252" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.generators[13]" destination="*" netmask="*" gateway="10.0.2.77" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.generators[14]" destination="10.0.2.0" netmask="255.255.255.252" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.generators[14]" destination="*" netmask="*" gateway="10.0.2.81" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.generators[15]" destination="10.0.2.0" netmask="255.255.255.252" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.generators[15]" destination="*" netmask="*" gateway="10.0.2.85" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.generators[16]" destination="10.0.2.0" netmask="255.255.255.252" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.generators[16]" destination="*" netmask="*" gateway="10.0.2.89" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.generators[17]" destination="10.0.2.0" netmask="255.255.255.252" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.generators[17]" destination="*" netmask="*" gateway="10.0.2.93" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.generators[18]" destination="10.0.2.0" netmask="255.255.255.252" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.generators[18]" destination="*" netmask="*" gateway="10.0.2.97" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.generators[19]" destination="10.0.2.0" netmask="255.255.255.252" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.generators[19]" destination="*" netmask="*" gateway="10.0.2.101" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.generators[20]" destination="10.0.2.0" netmask="255.255.255.252" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.generators[20]" destination="*" netmask="*" gateway="10.0.2.105" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.generators[21]" destination="10.0.2.0" netmask="255.255.255.252" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.generators[21]" destination="*" netmask="*" gateway="10.0.2.109" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.generators[22]" destination="10.0.2.0" netmask="255.255.255.252" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.generators[22]" destination="*" netmask="*" gateway="10.0.2.113" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.generators[23]" destination="10.0.2.0" netmask="255.255.255.252" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.generators[23]" destination="*" netmask="*" gateway="10.0.2.117" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.generators[24]" destination="10.0.2.0" netmask="255.255.255.252" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.generators[24]" destination="*" netmask="*" gateway="10.0.2.121" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.generators[25]" destination="10.0.2.0" netmask="255.255.255.252" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.generators[25]" destination="*" netmask="*" gateway="10.0.2.125" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.generators[26]" destination="10.0.2.0" netmask="255.255.255.252" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.generators[26]" destination="*" netmask="*" gateway="10.0.2.129" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.generators[27]" destination="10.0.2.0" netmask="255.255.255.252" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.generators[27]" destination="*" netmask="*" gateway="10.0.2.133" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.generators[28]" destination="10.0.2.0" netmask="255.255.255.252" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.generators[28]" destination="*" netmask="*" gateway="10.0.2.137" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.generators[29]" destination="10.0.2.0" netmask="255.255.255.252" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.generators[29]" destination="*" netmask="*" gateway="10.0.2.141" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.generators[30]" destination="10.0.2.0" netmask="255.255.255.252" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.generators[30]" destination="*" netmask="*" gateway="10.0.2.145" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.generators[31]" destination="10.0.2.0" netmask="255.255.255.252" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.generators[31]" destination="*" netmask="*" gateway="10.0.2.149" interface="eth0" metric="0"/>
+   
+   <route hosts="DCFabric.genTor" destination="10.0.1.1" netmask="255.255.255.255" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.genTor" destination="10.0.1.5" netmask="255.255.255.255" gateway="*" interface="eth1" metric="0"/>
+   <route hosts="DCFabric.genTor" destination="10.0.1.9" netmask="255.255.255.255" gateway="*" interface="eth2" metric="0"/>
+   <route hosts="DCFabric.genTor" destination="10.0.1.25" netmask="255.255.255.255" gateway="*" interface="eth3" metric="0"/>
+   <route hosts="DCFabric.genTor" destination="10.0.1.29" netmask="255.255.255.255" gateway="*" interface="eth4" metric="0"/>
+   <route hosts="DCFabric.genTor" destination="10.0.1.33" netmask="255.255.255.255" gateway="*" interface="eth5" metric="0"/>
+   <route hosts="DCFabric.genTor" destination="10.0.3.0" netmask="255.255.255.0" gateway="10.0.1.1" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.genTor" destination="10.0.3.0" netmask="255.255.255.0" gateway="10.0.1.5" interface="eth1" metric="0"/>
+   <route hosts="DCFabric.genTor" destination="10.0.3.0" netmask="255.255.255.0" gateway="10.0.1.9" interface="eth2" metric="0"/>
+   <route hosts="DCFabric.genTor" destination="10.0.3.0" netmask="255.255.255.0" gateway="10.0.1.25" interface="eth3" metric="0"/>
+   <route hosts="DCFabric.genTor" destination="10.0.3.0" netmask="255.255.255.0" gateway="10.0.1.29" interface="eth4" metric="0"/>
+   <route hosts="DCFabric.genTor" destination="10.0.3.0" netmask="255.255.255.0" gateway="10.0.1.33" interface="eth5" metric="0"/>
+   
+   <route hosts="DCFabric.sinks[0]" destination="10.0.3.0" netmask="255.255.255.252" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.sinks[0]" destination="*" nemask="*" gateway="10.0.3.25" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.sinks[1]" destination="10.0.3.0" netmask="255.255.255.252" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.sinks[1]" destination="*" netmask="*" gateway="10.0.3.29" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.sinks[2]" destination="10.0.3.0" netmask="255.255.255.252" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.sinks[2]" destination="*" netmask="*" gateway="10.0.3.33" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.sinks[3]" destination="10.0.3.0" netmask="255.255.255.252" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.sinks[3]" destination="*" netmask="*" gateway="10.0.3.37" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.sinks[4]" destination="10.0.3.0" netmask="255.255.255.252" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.sinks[4]" destination="*" netmask="*" gateway="10.0.3.41" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.sinks[5]" destination="10.0.3.0" netmask="255.255.255.252" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.sinks[5]" destination="*" netmask="*" gateway="10.0.3.45" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.sinks[6]" destination="10.0.3.0" netmask="255.255.255.252" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.sinks[6]" destination="*" netmask="*" gateway="10.0.3.49" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.sinks[7]" destination="10.0.3.0" netmask="255.255.255.252" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.sinks[7]" destination="*" netmask="*" gateway="10.0.3.53" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.sinks[8]" destination="10.0.3.0" netmask="255.255.255.252" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.sinks[8]" destination="*" netmask="*" gateway="10.0.3.57" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.sinks[9]" destination="10.0.3.0" netmask="255.255.255.252" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.sinks[9]" destination="*" netmask="*" gateway="10.0.3.61" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.sinks[10]" destination="10.0.3.0" netmask="255.255.255.252" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.sinks[10]" destination="*" netmask="*" gateway="10.0.3.65" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.sinks[11]" destination="10.0.3.0" netmask="255.255.255.252" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.sinks[11]" destination="*" netmask="*" gateway="10.0.3.69" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.sinks[12]" destination="10.0.3.0" netmask="255.255.255.252" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.sinks[12]" destination="*" netmask="*" gateway="10.0.3.73" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.sinks[13]" destination="10.0.3.0" netmask="255.255.255.252" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.sinks[13]" destination="*" netmask="*" gateway="10.0.3.77" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.sinks[14]" destination="10.0.3.0" netmask="255.255.255.252" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.sinks[14]" destination="*" netmask="*" gateway="10.0.3.81" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.sinks[15]" destination="10.0.3.0" netmask="255.255.255.252" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.sinks[15]" destination="*" netmask="*" gateway="10.0.3.85" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.sinks[16]" destination="10.0.3.0" netmask="255.255.255.252" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.sinks[16]" destination="*" netmask="*" gateway="10.0.3.89" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.sinks[17]" destination="10.0.3.0" netmask="255.255.255.252" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.sinks[17]" destination="*" netmask="*" gateway="10.0.3.93" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.sinks[18]" destination="10.0.3.0" netmask="255.255.255.252" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.sinks[18]" destination="*" netmask="*" gateway="10.0.3.97" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.sinks[19]" destination="10.0.3.0" netmask="255.255.255.252" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.sinks[19]" destination="*" netmask="*" gateway="10.0.3.101" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.sinks[20]" destination="10.0.3.0" netmask="255.255.255.252" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.sinks[20]" destination="*" netmask="*" gateway="10.0.3.105" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.sinks[21]" destination="10.0.3.0" netmask="255.255.255.252" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.sinks[21]" destination="*" netmask="*" gateway="10.0.3.109" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.sinks[22]" destination="10.0.3.0" netmask="255.255.255.252" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.sinks[22]" destination="*" netmask="*" gateway="10.0.3.113" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.sinks[23]" destination="10.0.3.0" netmask="255.255.255.252" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.sinks[23]" destination="*" netmask="*" gateway="10.0.3.117" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.sinks[24]" destination="10.0.3.0" netmask="255.255.255.252" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.sinks[24]" destination="*" netmask="*" gateway="10.0.3.121" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.sinks[25]" destination="10.0.3.0" netmask="255.255.255.252" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.sinks[25]" destination="*" netmask="*" gateway="10.0.3.125" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.sinks[26]" destination="10.0.3.0" netmask="255.255.255.252" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.sinks[26]" destination="*" netmask="*" gateway="10.0.3.129" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.sinks[27]" destination="10.0.3.0" netmask="255.255.255.252" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.sinks[27]" destination="*" netmask="*" gateway="10.0.3.133" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.sinks[28]" destination="10.0.3.0" netmask="255.255.255.252" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.sinks[28]" destination="*" netmask="*" gateway="10.0.3.137" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.sinks[29]" destination="10.0.3.0" netmask="255.255.255.252" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.sinks[29]" destination="*" netmask="*" gateway="10.0.3.141" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.sinks[30]" destination="10.0.3.0" netmask="255.255.255.252" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.sinks[30]" destination="*" netmask="*" gateway="10.0.3.145" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.sinks[31]" destination="10.0.3.0" netmask="255.255.255.252" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.sinks[31]" destination="*" netmask="*" gateway="10.0.3.149" interface="eth0" metric="0"/>
+  
+   <route hosts="DCFabric.sinkTor" destination="10.0.1.13" netmask="255.255.255.255" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.sinkTor" destination="10.0.1.17" netmask="255.255.255.255" gateway="*" interface="eth1" metric="0"/>
+   <route hosts="DCFabric.sinkTor" destination="10.0.1.21" netmask="255.255.255.255" gateway="*" interface="eth2" metric="0"/>
+   <route hosts="DCFabric.sinkTor" destination="10.0.1.37" netmask="255.255.255.255" gateway="*" interface="eth3" metric="0"/>
+   <route hosts="DCFabric.sinkTor" destination="10.0.1.41" netmask="255.255.255.255" gateway="*" interface="eth4" metric="0"/>
+   <route hosts="DCFabric.sinkTor" destination="10.0.1.45" netmask="255.255.255.255" gateway="*" interface="eth5" metric="0"/>
+   <route hosts="DCFabric.sinkTor" destination="10.0.2.0" netmask="255.255.255.0" gateway="10.0.1.13" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.sinkTor" destination="10.0.2.0" netmask="255.255.255.0" gateway="10.0.1.17" interface="eth1" metric="0"/>
+   <route hosts="DCFabric.sinkTor" destination="10.0.2.0" netmask="255.255.255.0" gateway="10.0.1.21" interface="eth2" metric="0"/>
+   <route hosts="DCFabric.sinkTor" destination="10.0.2.0" netmask="255.255.255.0" gateway="10.0.1.37" interface="eth3" metric="0"/>
+   <route hosts="DCFabric.sinkTor" destination="10.0.2.0" netmask="255.255.255.0" gateway="10.0.1.41" interface="eth4" metric="0"/>
+   <route hosts="DCFabric.sinkTor" destination="10.0.2.0" netmask="255.255.255.0" gateway="10.0.1.45" interface="eth5" metric="0"/>
+   
+   <route hosts="DCFabric.spines[0]" destination="10.0.2.1" netmask="255.255.255.255" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.spines[0]" destination="10.0.2.5" netmask="255.255.255.255" gateway="*" interface="eth1" metric="0"/>
+   <route hosts="DCFabric.spines[0]" destination="10.0.2.9" netmask="255.255.255.255" gateway="*" interface="eth2" metric="0"/>
+   <route hosts="DCFabric.spines[0]" destination="10.0.3.1" netmask="255.255.255.255" gateway="*" interface="eth3" metric="0"/>
+   <route hosts="DCFabric.spines[0]" destination="10.0.3.5" netmask="255.255.255.255" gateway="*" interface="eth4" metric="0"/>
+   <route hosts="DCFabric.spines[0]" destination="10.0.3.9" netmask="255.255.255.255" gateway="*" interface="eth5" metric="0"/>
+   <route hosts="DCFabric.spines[0]" destination="10.0.2.0" netmask="255.255.255.0" gateway="10.0.2.1" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.spines[0]" destination="10.0.2.0" netmask="255.255.255.0" gateway="10.0.2.5" interface="eth1" metric="0"/>
+   <route hosts="DCFabric.spines[0]" destination="10.0.2.0" netmask="255.255.255.0" gateway="10.0.2.9" interface="eth2" metric="0"/>
+   <route hosts="DCFabric.spines[0]" destination="10.0.3.0" netmask="255.255.255.0" gateway="10.0.3.1" interface="eth3" metric="0"/>
+   <route hosts="DCFabric.spines[0]" destination="10.0.3.0" netmask="255.255.255.0" gateway="10.0.3.5" interface="eth4" metric="0"/>
+   <route hosts="DCFabric.spines[0]" destination="10.0.3.0" netmask="255.255.255.0" gateway="10.0.3.9" interface="eth5" metric="0"/>
+   
+   <route hosts="DCFabric.spines[1]" destination="10.0.2.13" netmask="255.255.255.255" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.spines[1]" destination="10.0.2.17" netmask="255.255.255.255" gateway="*" interface="eth1" metric="0"/>
+   <route hosts="DCFabric.spines[1]" destination="10.0.2.21" netmask="255.255.255.255" gateway="*" interface="eth2" metric="0"/>
+   <route hosts="DCFabric.spines[1]" destination="10.0.3.13" netmask="255.255.255.255" gateway="*" interface="eth3" metric="0"/>
+   <route hosts="DCFabric.spines[1]" destination="10.0.3.17" netmask="255.255.255.255" gateway="*" interface="eth4" metric="0"/>
+   <route hosts="DCFabric.spines[1]" destination="10.0.3.21" netmask="255.255.255.255" gateway="*" interface="eth5" metric="0"/>
+   <route hosts="DCFabric.spines[1]" destination="10.0.2.0" netmask="255.255.255.0" gateway="10.0.2.13" interface="eth0" metric="0"/>
+   <route hosts="DCFabric.spines[1]" destination="10.0.2.0" netmask="255.255.255.0" gateway="10.0.2.17" interface="eth1" metric="0"/>
+   <route hosts="DCFabric.spines[1]" destination="10.0.2.0" netmask="255.255.255.0" gateway="10.0.2.21" interface="eth2" metric="0"/>
+   <route hosts="DCFabric.spines[1]" destination="10.0.3.0" netmask="255.255.255.0" gateway="10.0.3.13" interface="eth3" metric="0"/>
+   <route hosts="DCFabric.spines[1]" destination="10.0.3.0" netmask="255.255.255.0" gateway="10.0.3.17" interface="eth4" metric="0"/>
+   <route hosts="DCFabric.spines[1]" destination="10.0.3.0" netmask="255.255.255.0" gateway="10.0.3.21" interface="eth5" metric="0"/>
+</config>

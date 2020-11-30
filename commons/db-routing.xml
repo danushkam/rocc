@@ -1,0 +1,49 @@
+<config>
+   <interface hosts="DBFabric.sw1" names="eth0" address="10.0.1.1" netmask="255.255.255.252" metric="1"/> <!-- 252 -> 1, 5, 9, ... -->
+   <interface hosts="DBFabric.sw1" names="eth*" address="10.0.1.x" netmask="255.255.255.252" metric="1"/>
+   <interface hosts="DBFabric.generators[0..7]" names="eth0" address="10.0.1.x" netmask="255.255.255.252" metric="1"/>
+   
+   <interface hosts="DBFabric.sw2" names="eth0" address="10.0.2.1" netmask="255.255.255.252" metric="1"/>
+   <interface hosts="DBFabric.sw2" names="eth*" address="10.0.2.x" netmask="255.255.255.252" metric="1"/>
+   <interface hosts="DBFabric.sinks[0..7]" names="eth0" address="10.0.2.x" netmask="255.255.255.252" metric="1"/>
+   
+   <route hosts="DBFabric.generators[0]" destination="10.0.1.0" netmask="255.255.255.252" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="DBFabric.generators[0]" destination="*" netmask="*" gateway="10.0.1.5" interface="eth0" metric="0"/>
+   <route hosts="DBFabric.generators[1]" destination="10.0.1.0" netmask="255.255.255.252" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="DBFabric.generators[1]" destination="*" netmask="*" gateway="10.0.1.9" interface="eth0" metric="0"/>
+   <route hosts="DBFabric.generators[2]" destination="10.0.1.0" netmask="255.255.255.252" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="DBFabric.generators[2]" destination="*" netmask="*" gateway="10.0.1.13" interface="eth0" metric="0"/>
+   <route hosts="DBFabric.generators[3]" destination="10.0.1.0" netmask="255.255.255.252" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="DBFabric.generators[3]" destination="*" netmask="*" gateway="10.0.1.17" interface="eth0" metric="0"/>
+   <route hosts="DBFabric.generators[4]" destination="10.0.1.0" netmask="255.255.255.252" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="DBFabric.generators[4]" destination="*" netmask="*" gateway="10.0.1.21" interface="eth0" metric="0"/>
+   <route hosts="DBFabric.generators[5]" destination="10.0.1.0" netmask="255.255.255.252" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="DBFabric.generators[5]" destination="*" netmask="*" gateway="10.0.1.25" interface="eth0" metric="0"/>
+   <route hosts="DBFabric.generators[6]" destination="10.0.1.0" netmask="255.255.255.252" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="DBFabric.generators[6]" destination="*" netmask="*" gateway="10.0.1.29" interface="eth0" metric="0"/>
+   <route hosts="DBFabric.generators[7]" destination="10.0.1.0" netmask="255.255.255.252" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="DBFabric.generators[7]" destination="*" netmask="*" gateway="10.0.1.33" interface="eth0" metric="0"/>
+   
+   <!--route hosts="DBFabric.sw1" destination="10.0.2.1" netmask="255.255.255.255" gateway="*" interface="eth0" metric="0"/-->
+   <route hosts="DBFabric.sw1" destination="10.0.2.0" netmask="255.255.255.0" gateway="10.0.2.1" interface="eth0" metric="0"/>
+   
+   <route hosts="DBFabric.sinks[0]" destination="10.0.2.0" netmask="255.255.255.252" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="DBFabric.sinks[0]" destination="*" netmask="*" gateway="10.0.2.5" interface="eth0" metric="0"/>
+   <route hosts="DBFabric.sinks[1]" destination="10.0.2.0" netmask="255.255.255.252" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="DBFabric.sinks[1]" destination="*" netmask="*" gateway="10.0.2.9" interface="eth0" metric="0"/>
+   <route hosts="DBFabric.sinks[2]" destination="10.0.2.0" netmask="255.255.255.252" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="DBFabric.sinks[2]" destination="*" netmask="*" gateway="10.0.2.13" interface="eth0" metric="0"/>
+   <route hosts="DBFabric.sinks[3]" destination="10.0.2.0" netmask="255.255.255.252" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="DBFabric.sinks[3]" destination="*" netmask="*" gateway="10.0.2.17" interface="eth0" metric="0"/>
+   <route hosts="DBFabric.sinks[4]" destination="10.0.2.0" netmask="255.255.255.252" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="DBFabric.sinks[4]" destination="*" netmask="*" gateway="10.0.2.21" interface="eth0" metric="0"/>
+   <route hosts="DBFabric.sinks[5]" destination="10.0.2.0" netmask="255.255.255.252" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="DBFabric.sinks[5]" destination="*" netmask="*" gateway="10.0.2.25" interface="eth0" metric="0"/>
+   <route hosts="DBFabric.sinks[6]" destination="10.0.2.0" netmask="255.255.255.252" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="DBFabric.sinks[6]" destination="*" netmask="*" gateway="10.0.2.29" interface="eth0" metric="0"/>
+   <route hosts="DBFabric.sinks[7]" destination="10.0.2.0" netmask="255.255.255.252" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="DBFabric.sinks[7]" destination="*" netmask="*" gateway="10.0.2.33" interface="eth0" metric="0"/>
+   
+   <!--route hosts="DBFabric.sw2" destination="10.0.1.1" netmask="255.255.255.255" gateway="*" interface="eth0" metric="0"/-->
+   <route hosts="DBFabric.sw2" destination="10.0.1.0" netmask="255.255.255.0" gateway="10.0.1.1" interface="eth0" metric="0"/>
+</config>

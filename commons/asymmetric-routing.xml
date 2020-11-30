@@ -1,0 +1,33 @@
+<config>
+   <interface hosts="AsymmetricFabric.sw1" names="eth*" address="10.0.1.x" netmask="255.255.255.252" metric="1"/>
+   <interface hosts="AsymmetricFabric.gens1[0..4]" names="eth0" address="10.0.1.x" netmask="255.255.255.252" metric="1"/>
+   
+   <interface hosts="AsymmetricFabric.sw2" names="eth*" address="10.0.2.x" netmask="255.255.255.252" metric="1"/>
+   <interface hosts="AsymmetricFabric.gens2[0..1]" names="eth0" address="10.0.2.x" netmask="255.255.255.252" metric="1"/>
+   
+   <interface hosts="AsymmetricFabric.sw3" names="eth*" address="10.0.3.x" netmask="255.255.255.252" metric="1"/>
+   <interface hosts="AsymmetricFabric.sink" names="eth0" address="10.0.3.x" netmask="255.255.255.252" metric="1"/>
+   
+   <route hosts="AsymmetricFabric.gens1[*]" destination="10.0.3.0" netmask="255.255.255.0" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="AsymmetricFabric.gens1[*]" destination="*" netmask="*" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="AsymmetricFabric.gens2[*]" destination="10.0.3.0" netmask="255.255.255.0" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="AsymmetricFabric.gens2[*]" destination="*" netmask="*" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="AsymmetricFabric.sink" destination="10.0.1.0" netmask="255.255.255.0" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="AsymmetricFabric.sink" destination="10.0.2.0" netmask="255.255.255.0" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="AsymmetricFabric.sink" destination="*" netmask="*" gateway="*" interface="eth0" metric="0"/>
+   
+   <route hosts="AsymmetricFabric.sw1" destination="10.0.1.1" netmask="255.255.255.255" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="AsymmetricFabric.sw1" destination="10.0.1.5" netmask="255.255.255.255" gateway="*" interface="eth1" metric="0"/>
+   <route hosts="AsymmetricFabric.sw1" destination="10.0.1.9" netmask="255.255.255.255" gateway="*" interface="eth2" metric="0"/>
+   <route hosts="AsymmetricFabric.sw1" destination="10.0.1.13" netmask="255.255.255.255" gateway="*" interface="eth3" metric="0"/>
+   <route hosts="AsymmetricFabric.sw1" destination="10.0.1.17" netmask="255.255.255.255" gateway="*" interface="eth4" metric="0"/>
+   <route hosts="AsymmetricFabric.sw1" destination="10.0.3.0" netmask="255.255.255.0" gateway="*" interface="eth5" metric="0"/>
+   
+   <route hosts="AsymmetricFabric.sw2" destination="10.0.2.1" netmask="255.255.255.255" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="AsymmetricFabric.sw2" destination="10.0.2.5" netmask="255.255.255.255" gateway="*" interface="eth1" metric="0"/>
+   <route hosts="AsymmetricFabric.sw2" destination="10.0.3.0" netmask="255.255.255.0" gateway="*" interface="eth2" metric="0"/>
+   
+   <route hosts="AsymmetricFabric.sw3" destination="10.0.1.0" netmask="255.255.255.0" gateway="*" interface="eth0" metric="0"/>
+   <route hosts="AsymmetricFabric.sw3" destination="10.0.2.0" netmask="255.255.255.0" gateway="*" interface="eth1" metric="0"/>
+   <route hosts="AsymmetricFabric.sw3" destination="10.0.3.0" netmask="255.255.255.0" gateway="*" interface="eth2" metric="0"/>
+</config>
