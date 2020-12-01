@@ -6,7 +6,7 @@ This code repository includes the OMNeT++ implementations of RoCC and the main r
 
 Please follow the step given below to install the simulation environment.
 
-1. Install OMNeT++ version 5.2.1. Please download it from https://omnetpp.org/download/old and follow the simple instructions given in the documentation to install it on your preferred operating system.
+1. Install OMNeT++ version 5.2.1. Please download it from https://omnetpp.org/download/old and follow the instructions given in the documentation to install it on your preferred operating system.
 
 2. Once you have OMNeT++ working on your machine, you can compile the code in this repo in the order given below. You can use the make files in the respective directories to compile the binaries by running *make*. Alternatively, you can import the modules into the OMNeT++ IDE (*File -> Open Projects from File System...*) and compile them using the IDE.
 
