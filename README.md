@@ -20,4 +20,4 @@ Please follow the step given below to install the simulation environment.
 
 You can use the *.ini* files inside the solution directories to run the simulations using the OMNeT++ IDE. The repository currently includes the simulations for evaluating the solution implementations and we are in the process of adding the rest of the simulations into the repo.
 
-Please feel free to contact me at *dmenikku@purdue.edu* if you have any questions.
+Please feel free to contact me at *dmenikku [at] purdue [dot] edu* if you have any questions.
