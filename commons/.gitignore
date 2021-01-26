@@ -2,7 +2,6 @@
 .oppbuildspec
 .project
 .settings
-Makefile
 libCOMMONS.dylib
 out/
 .DS_Store

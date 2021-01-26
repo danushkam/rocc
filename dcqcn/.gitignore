@@ -3,7 +3,6 @@
 .project
 .settings/
 .qtenvrc
-Makefile
 out/
 results/
 *.anf
